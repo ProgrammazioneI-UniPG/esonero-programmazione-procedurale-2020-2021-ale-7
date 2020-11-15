@@ -12,14 +12,14 @@ int main() {
 
   printf("Insert your string, using no more than 128 characters: ");
   fgets(M, 128, stdin);
-  printf("This is your initial string: %s\n", M);
+  printf("This is your string: %s\n", M);
   printf("Press 1 to write manually your key.\nPress 2 to get randomically a key. \n");
   scanf("%d", &choice);
   while ((c = getchar()) != '\n' && c != EOF);
 
  if (choice == 1) {
  do  {
-printf("Choose a key that is not shorter than the initial string: ");
+printf("Choose a key that is as long as the string or longer: ");
    fgets(K, 128, stdin);
    if (strlen(K) < strlen(M)) {
    printf("Choose another key.\n");
@@ -29,14 +29,14 @@ printf("Choose a key that is not shorter than the initial string: ");
  for (int i = 0; i < strlen(M); i++) {
     C[i] = M[i]^K[i];
   }
-           printf("This is your cripted string: ");
+           printf("This is your encrypted string: ");
            for (int i = 0; i < strlen(M); i++) {
              printf("%x", C[i]);
            }
 for (int i = 0; i < strlen(C); i++){
 M[i] = C[i]^K[i];
 }
-          printf("\nThis was your initial string: %s\n", M);
+          printf("\nThis was your string: %s\n", M);
 }
 
 if (choice == 2) {
@@ -50,12 +50,12 @@ if (choice == 2) {
   for (int i = 0; i < strlen(M); i++) {
      C[i] = M[i]^K[i];
    }
-            printf("This is your cripted string: ");
+            printf("This is your encrypted string: ");
             for (int i = 0; i < strlen(M); i++) {
               printf("%x", C[i]);
             }
  for (int i = 0; i < strlen(C); i++){
  M[i] = C[i]^K[i];
  }
-           printf("\nThis was your initial string: %s\n", M);
+           printf("\nThis was your string: %s\n", M);
  } }
